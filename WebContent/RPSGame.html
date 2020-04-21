@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPSGame.html</title>
+</head>
+<body>
+    <script>
+        function rpsGame(){
+            //1에서 3사이의 난수 생성
+            var com = parseInt(Math.random()*3)+1;
+            var user=Number(document.getElementById("user").value);
+            
+            
+
+
+            if( !(user<1 || user>3)) {
+                switch(user - com) {
+                    case 0: document.write("비겼습니다."); break;
+                    case 1: case -2: document.write ("이겼습니다."); break;
+                    case -1: case 2: document.write("졌습니다."); break;
+                }
+            }
+            document.getElementById("result").value;
+        }
+    </script>
+
+    <h2>가위바위보 게임</h2>
+    <fieldset>
+        <table border=1 height=200px; width=200;>
+            <tr>
+                <td>컴퓨터</td>
+                <td>나</td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </fieldset>
+</body>
+</html>
