@@ -80,6 +80,11 @@
         <option value="guaba">구아바</option>
     </select>
 
+    <!--
+        submit(전송)이벤트 : form값을 서버로 전송하기 위해 submit버튼을
+            눌렀을 때 발생하는 이벤트로 반환값이 true일 때만 전송된다.
+            false인 경우에는 전송되지 않는다.
+    -->
     <script>
         function fnSubmit(){
             var txtObj = document.subForm.txt;
@@ -90,6 +95,10 @@
             }
         }
 
+        /*
+        form 태그는 문서내에서 2개이상 사용이 가능하므로 forms[인덱스값]
+        형태로 DOM에 접근할 수 있다.
+        */
         window.onload = function(){
             document.forms[0].onreset = function(){
                 alert("reset 이벤트 발생");
