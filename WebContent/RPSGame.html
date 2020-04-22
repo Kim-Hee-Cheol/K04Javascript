@@ -7,13 +7,31 @@
 </head>
 <body>
     <script>
+        function changeNum(choice){
+            switch(choice){
+                case 1:
+                    choice = "가위"
+                    break;
+                case 2:
+                    choice = "바위"
+                    break;
+                case 3:
+                    choice = "보"
+                    break;
+            }
+            return choice;
+        }
+
         function rpsGame(){
             //1에서 3사이의 난수 생성
             var com = parseInt(Math.random()*3)+1;
-            var user=Number(document.getElementById("user").value);
+            var user = Number(document.getElementById("user").value);
             
-            
+            var user_img = document.getElementById("user");
+            var com_img = document.getElementById("com");
 
+            user_img.src = "./images" +changeNum(user) + "jpg";
+            com_img.src = "./images" +changeNum(com) + "jpg";
 
             if( !(user<1 || user>3)) {
                 switch(user - com) {
@@ -35,13 +53,17 @@
             </tr>
 
             <tr>
-                <td></td>
-                <td></td>
+                <td>
+                    <img id="com" src="./images/start.png" width="200px" height="200px"/>
+                </td>
+                <td>
+                    <img id="user" src="./images/start.png" width="200px" height="200px"/>
+                </td>
             </tr>
 
             <tr>
-                <td></td>
-                <td></td>
+                <td colspan="2"></td>
+                
             </tr>
         </table>
     </fieldset>
