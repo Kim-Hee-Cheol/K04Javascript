@@ -23,7 +23,7 @@
         </tr>
         <tr>
             <td colspan="2" style="text-align:right;">
-                <input type="button" value="다음" onclick="location.href='./Registep02.html';"
+                <input type="button" value="다음" onclick="formValidate();"
                     style="width: 100px; height: 50px; border-color:black; background-color: white;"
                     onmouseover= "this.style.backgroundColor='#e5e5e5';">
             </td>
@@ -50,7 +50,7 @@
             }
         }
         function formValidate(){
-            var frm = document.forms[0];
+            var frm = document.registFrm;
             
             if(frm.jumin1.value==""){
                 alert("주민번호를 입력해주세요");
@@ -70,10 +70,15 @@
             }
             if(document.getElementById("ju1").value.length < 6){
                 alert("주민번호 앞6자리를 입력해주세요");
+                return false;
             }
             if(document.getElementById("ju2").value.length < 7){
                 alert("주민번호 뒷7자리를 입력해주세요");
+                return false;
             }
+
+            location.href='./Registep02.html';
+
         }
         
         
