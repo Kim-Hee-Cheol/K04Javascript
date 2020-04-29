@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test.html</title>
+</head>
+<body>
+    <form name="registFrm">
+    <table cellspacing="0" cellpadding="20">
+        <tr>
+            <td>주민번호</td>
+            <td >
+                <input type="text" id="ju1" name="jumin1" size="10" maxlength="6" onkeyup="fnJuminFocus(this);"/> -
+                <input type="text" id="ju2" name="jumin2" size="10" maxlength="7"onkeyup="commonFoucusMove(this,7);"/>
+            </td>
+        </tr>
+        <tr>
+            <td>이름</td>
+            <td>
+                <input type="text" name="na" size="30" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:right;">
+                <input type="button" value="다음" onclick="location.href='./Registep02.html';"
+                    style="width: 100px; height: 50px; border-color:black; background-color: white;"
+                    onmouseover= "this.style.backgroundColor='#e5e5e5';">
+            </td>
+        </tr>
+    </table>
+    
+    </form> 
+
+
+    <script>
+        function fnJuminFocus(obj){
+            
+            var strLength = obj.value.length;
+            console.log("strLength", strLength);
+            var second = document.getElementById("ju2");
+            if(strLength>=6){
+                second.focus();
+            }
+        }
+        function commonFoucusMove(obj, mLength, next_obj){
+            var strLength = obj.value.length;
+            if(strLength >= mLength){
+                document.getElementById(next_obj).focus();
+            }
+        }
+        function formValidate(){
+            var frm = document.forms[0];
+            
+            if(frm.jumin1.value==""){
+                alert("주민번호를 입력해주세요");
+                frm.jumin1.focus();
+                return false;
+            }
+            
+            if(frm.jumin2.value==""){
+                alert("주민번호를 입력해주세요");
+                frm.jumin2.focus();
+                return false;
+            }
+            if(!frm.na.value){
+                alert("이름을 입력해주세요");
+                frm.na.focus();
+                return false;
+            }
+            if(document.getElementById("ju1").value.length < 6){
+                alert("주민번호 앞6자리를 입력해주세요");
+            }
+            if(document.getElementById("ju2").value.length < 7){
+                alert("주민번호 뒷7자리를 입력해주세요");
+            }
+        }
+        
+        
+    </script>      
+</body>
+</html>
