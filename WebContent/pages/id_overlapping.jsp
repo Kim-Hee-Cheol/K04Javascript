@@ -6,16 +6,16 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-    function idUse(){
-        /*
+function idUse(){
+/*
         자식창에서 opener속성으로 부모창으로 데이터를 전송한다.
         부모창의 아이디 입력필드가 readonly로 변경되었으므로 JS를 통해
         값을 변경해야 한다.
-        */
-        opener.document.registFrm.id.value =
-                document.overlapFrm.retype_id.value;
-        self.close()
-    }
+*/
+    opener.document.registFrm.id.value =
+        document.overlapFrm.retype_id.value;
+    self.close()
+}
 </script>
 </head>
 <body>
